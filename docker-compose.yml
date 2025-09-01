@@ -185,6 +185,8 @@ services:
             - WHITEBOARD_COLLAB_SERVER_URL_BASE
         networks:
             meet.jitsi:
+                aliases:
+                    - meet.jitsi
         depends_on:
             - jvb
 
@@ -433,6 +435,8 @@ services:
             - prosody
         networks:
             meet.jitsi:
+                aliases:
+                    - jicofo.meet.jitsi
 
     # Video bridge
     jvb:
@@ -501,6 +505,8 @@ services:
             - prosody
         networks:
             meet.jitsi:
+                aliases:
+                    - jvb.meet.jitsi
 
 # Custom network so all services can communicate using a FQDN
 networks:

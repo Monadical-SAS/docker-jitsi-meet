@@ -203,8 +203,8 @@ services:
             service: "jitsi-prosody"
         volumes:
             - ${CONFIG}/prosody/config:/config:Z
-            - ${CONFIG}/prosody/prosody-plugins-custom:/prosody-plugins-custom:Z
-            - ${RECORDINGS}:/recordings
+            - /opt/jitsi-meet/prosody-plugins-custom:/prosody-plugins-custom:Z
+            - /opt/jitsi-meet/recordings:/recordings
         environment:
             - AUTH_TYPE
             - DISABLE_POLLS
@@ -514,7 +514,7 @@ services:
         restart: ${RESTART_POLICY:-unless-stopped}
         volumes:
             - ${CONFIG}/jibri:/config:Z
-            - ${RECORDINGS}:/recordings
+            - /opt/jitsi-meet/recordings:/recordings
         shm_size: '2gb'
         cap_add:
             - SYS_ADMIN
@@ -547,7 +547,7 @@ services:
         restart: ${RESTART_POLICY:-unless-stopped}
         volumes:
             - ${CONFIG}/jibri:/config:Z
-            - ${RECORDINGS}:/recordings
+            - /opt/jitsi-meet/recordings:/recordings
         shm_size: '2gb'
         cap_add:
             - SYS_ADMIN
@@ -580,7 +580,7 @@ services:
         restart: ${RESTART_POLICY:-unless-stopped}
         volumes:
             - ${CONFIG}/jibri:/config:Z
-            - ${RECORDINGS}:/recordings
+            - /opt/jitsi-meet/recordings:/recordings
         shm_size: '2gb'
         cap_add:
             - SYS_ADMIN

@@ -204,6 +204,7 @@ services:
         volumes:
             - ${CONFIG}/prosody/config:/config:Z
             - ${CONFIG}/prosody/prosody-plugins-custom:/prosody-plugins-custom:Z
+            - ${RECORDINGS}:/recordings
         environment:
             - AUTH_TYPE
             - DISABLE_POLLS
